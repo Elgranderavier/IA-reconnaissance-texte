@@ -1,4 +1,5 @@
 import numpy as np
+from activations import sigmoid
 class NeuralNetwork:
     def __init__(self, sizes):
         self.sizes = sizes #Liste avec le nombre de paramètre sur chaque couche du réseau
@@ -9,3 +10,8 @@ class NeuralNetwork:
             self.weights.append(np.random.randn(sizes[i+1],sizes[i])) #donne aux poids des valeurs aléatoires suivant une loi normale de moyenne nulle et de variance 1
         for i in sizes[1:]:
             self.biases.append(np.random.randn(i,1))
+    def feedforward(self,a):
+        for W,b in zip(self.weights,self.biases):
+            z = W @ a + b
+            a = sigmoid(z)
+        return a
