@@ -1,6 +1,8 @@
 import gzip
 import struct
 import numpy as np
+import os
+import urllib
 
 def read_images(path):
     with gzip.open(path, "rb") as f:
@@ -40,3 +42,7 @@ def read_labels(path):
 
     return labels
 
+def download(url, path):
+    if os.path.exists(path) == False:
+        urllib.request.urlretrieve(url,path)
+    return
