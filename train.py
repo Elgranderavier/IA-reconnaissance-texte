@@ -2,7 +2,7 @@ import mnist_loader as mload
 from network import NeuralNetwork
 import numpy as np
 import random
-path = "/home/tetreau/Documents/Projets_Data_Science/IA_reconnaissance_texte/MNSIT_DataBase"
+path = "/home/tetreau/Documents/Projets-Data-Science/IA-reconnaissance-texte/MNSIT_DataBase"
 
 train_images = mload.read_images(path +"/train-images-idx3-ubyte.gz")
 train_labels = mload.read_labels(path+"/train-labels-idx1-ubyte.gz")
